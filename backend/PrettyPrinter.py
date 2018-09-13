@@ -34,6 +34,8 @@ class PrettyPrint:
         for item in da_list:
             if hasattr(item, 'name') and item.name:
                 print(f"{beginning}{Fore.LIGHTCYAN_EX}{item.name}{Style.RESET_ALL}")
+            elif hasattr(item, 'id') and item.id:
+                print(f"{beginning}{Fore.LIGHTCYAN_EX}{item.name}{Style.RESET_ALL}")
             else:
                 print(f'{beginning}{Fore.LIGHTCYAN_EX}{item}{Style.RESET_ALL}')
 

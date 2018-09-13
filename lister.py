@@ -20,7 +20,7 @@ class Lister:
 
         # TODO Present menu with available actions - and loop until answer is from list of wanted
 
-        choosen = 'queues'
+        choosen = 'ec2'
         if choosen == 'buckets':
             # Get from AWS list of bought products - buckets
             awsb = Boughts()
@@ -35,6 +35,13 @@ class Lister:
             # Present list of bought products in console
             pp = PrettyPrint
             pp.numbered_list(bought_list, 'Simple Queue Services', 'sqs')
+        elif choosen == 'ec2':
+            # Get from AWS list of bought products - queues
+            awsb = Boughts()
+            ec2s = awsb.my_ec2()
+            # Present list of bought products in console
+            pp = PrettyPrint
+            pp.numbered_list(ec2s, 'EC2', 'ec2 inst')
         else:
             print('Then have a nice day..')
 

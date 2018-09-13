@@ -25,3 +25,14 @@ class Boughts:
         for queue in sqs.queues.all():
             my_sqs.append(queue.url)
         return my_sqs
+
+    @staticmethod
+    def my_ec2():
+        my_ec2 = []
+        ec2 = boto3.resource('ec2')
+        # da_response = ec2.describe_instance()
+        instances = ec2.instances.all()
+        #
+        for instance in instances:
+            my_ec2.append(instance.id)
+        return my_ec2  # my_ec2
