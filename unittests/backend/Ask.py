@@ -1,5 +1,6 @@
-class AWS_Ask:
-    def about(self):
+class Ask:
+    @staticmethod
+    def about():
         return 'Responsible for communication with AWS though net.'
     # TODO List all services of given type
 

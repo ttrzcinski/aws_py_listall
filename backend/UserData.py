@@ -9,14 +9,14 @@ class UserData:
     account: str
 
     # Creates new instance based on given variables
-    def __init__(self, name: str, account: str):
+    def __init__(self, name=None, account=None):
         self.name = name
         self.account = account
 
     # Equals
     def __eq__(self, other):
         if other.__class__ is not self.__class__:
-            return False # NetImplemented
+            return False  # NetImplemented
         return (self.name, self.account) == (other.name, other.account)
 
     # Representation
@@ -31,4 +31,3 @@ class UserData:
 
 if __name__ == "main":
     userData = UserData()
-

@@ -9,7 +9,7 @@ class PrettyPrint:
     """Presents numbered list with optional title of list and name of entires"""
     def numbered_list(da_list, title=None, name=None):
         # Check entered list
-        if not da_list or len(da_list) == 0:
+        if (not da_list) or (len(da_list) == 0) or (not type(da_list) is list):
             return
         print()
         # Trim entry params
@@ -37,4 +37,3 @@ class PrettyPrint:
             else:
                 print(f'{beginning}{Fore.LIGHTCYAN_EX}{item.name}{Style.RESET_ALL}')
 
-        pass

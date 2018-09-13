@@ -2,7 +2,7 @@
 
 from __future__ import print_function
 from backend.UserData import UserData
-from backend.AWS_boughts import AWS_boughts
+from backend.Boughts import Boughts
 from backend.PrettyPrinter import PrettyPrint
 
 
@@ -17,7 +17,7 @@ class Lister:
         # print('Hi, %s.' % name)
 
         # Get from AWS list of bought products - buckets
-        awsb = AWS_boughts()
+        awsb = Boughts()
         bought_list = awsb.my_buckets()
         # Present list of bought products in console
         pp = PrettyPrint

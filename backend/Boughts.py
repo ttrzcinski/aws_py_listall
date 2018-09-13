@@ -5,13 +5,14 @@ import boto3
 """Keeps methods to process list of bought products in AWS."""
 
 
-class AWS_boughts:
+class Boughts:
     """Reads list of bought buckets and returns them as array."""
 
-    def my_buckets(self):
+    @staticmethod
+    def my_buckets():
         # Let's call the Amazon
         # print("Connecting to Amazon..");
-        s3 = boto3.resource('s3');
+        s3 = boto3.resource('s3')
         # buckets
         # print("Listing all buckets.");
         my_bckts = []
