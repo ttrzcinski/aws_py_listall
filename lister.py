@@ -15,13 +15,28 @@ class Lister:
         user_data = UserData(name, account)
         user_data.as_line()
         # print('Hi, %s.' % name)
+        
+        # TODO Check, if user is present in global in ~user/.aws/config
 
-        # Get from AWS list of bought products - buckets
-        awsb = Boughts()
-        bought_list = awsb.my_buckets()
-        # Present list of bought products in console
-        pp = PrettyPrint
-        pp.numbered_list(bought_list, 'S3 Buckets', 'Bucket')
+        # TODO Present menu with available actions - and loop until answer is from list of wanted
+
+        choosen = 'queues'
+        if choosen == 'buckets':
+            # Get from AWS list of bought products - buckets
+            awsb = Boughts()
+            bought_list = awsb.my_buckets()
+            # Present list of bought products in console
+            pp = PrettyPrint
+            pp.numbered_list(bought_list, 'S3 Buckets', 'Bucket')
+        elif choosen == 'queues':
+            # Get from AWS list of bought products - queues
+            awsb = Boughts()
+            bought_list = awsb.my_sqs()
+            # Present list of bought products in console
+            pp = PrettyPrint
+            pp.numbered_list(bought_list, 'Simple Queue Services', 'sqs')
+        else:
+            print('Then have a nice day..')
 
 
 if __name__ == "__main__":

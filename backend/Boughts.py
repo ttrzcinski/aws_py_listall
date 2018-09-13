@@ -10,13 +10,18 @@ class Boughts:
 
     @staticmethod
     def my_buckets():
-        # Let's call the Amazon
-        # print("Connecting to Amazon..");
+        # Let's call the Amazon about buckets
         s3 = boto3.resource('s3')
         # buckets
-        # print("Listing all buckets.");
-        my_bckts = []
+        my_buckets = []
         for bucket in s3.buckets.all():
-            my_bckts.append(bucket)
-            # print(bucket.name)
-        return my_bckts
+            my_buckets.append(bucket)
+        return my_buckets
+
+    @staticmethod
+    def my_sqs():
+        my_sqs = []
+        sqs = boto3.resource('sqs')
+        for queue in sqs.queues.all():
+            my_sqs.append(queue.url)
+        return my_sqs

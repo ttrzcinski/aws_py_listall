@@ -32,8 +32,8 @@ class PrettyPrint:
             beginning = name + ": "
         # Present the list
         for item in da_list:
-            if not item.name:
-                print(f"{beginning}{Fore.LIGHTCYAN_EX}{item}{Style.RESET_ALL}")
+            if hasattr(item, 'name') and item.name:
+                print(f"{beginning}{Fore.LIGHTCYAN_EX}{item.name}{Style.RESET_ALL}")
             else:
-                print(f'{beginning}{Fore.LIGHTCYAN_EX}{item.name}{Style.RESET_ALL}')
+                print(f'{beginning}{Fore.LIGHTCYAN_EX}{item}{Style.RESET_ALL}')
 
